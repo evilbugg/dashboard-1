@@ -17,10 +17,9 @@ const renderCards = () => {
 }
 
 const Section2 = () => {
-    console.log(Section2Data);
     return (
         <div>
-            <div class="ui two cards">
+            <div className="ui two cards">
                 {renderCards()}
             </div>
             {/* <div class="ui two cards">

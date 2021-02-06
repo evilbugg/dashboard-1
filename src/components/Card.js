@@ -6,7 +6,6 @@ const criticalStyle = {
 
 const Card = (props) => {
     const styleName = props.isCritical ? criticalStyle : undefined;
-    console.log(styleName);
     return (
         <div className="card">
             <div className="content">

@@ -1,45 +1,20 @@
 import React, { Component } from 'react'
 import Chart from 'chart.js';
 
-const config = {
-    type: 'doughnut',
-    data: {
-        datasets: [{
-            data: [
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            backgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-            ],
-            hoverBackgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-            ],
-            label: 'Dataset 1'
-        }],
-        labels: [
-            "Red",
-            "Orange",
-            "Yellow",
-            "Green",
-            "Blue"
-        ]
+/*
+https://www.createwithdata.com/react-chartjs-dashboard/
+*/
+
+const donutsOptions = {
+    aspectRatio: 3.5,
+    legend: {
+        display: false
     },
-    options: {
-        legend: {
-            display: false
-        },
-        circumference: 1 * Math.PI,
-        rotation: 1 * Math.PI
-    }
+    circumference: 1 * Math.PI,
+    rotation: 1 * Math.PI
 };
+
+
 
 class DonutChart extends Component {
     chartRef = React.createRef();
@@ -47,13 +22,31 @@ class DonutChart extends Component {
     componentDidMount() {
         const myChartRef = this.chartRef.current.getContext("2d");
 
-        new Chart(myChartRef, config);
+        const backgroundColor = [
+            this.props.isCritical ? 'red' :  '#FF6384',
+            '#36A2EB', // Blue
+        ];
+
+        let config1 = {
+            type: 'doughnut',
+            data: {
+                datasets: [
+                    {
+                        data: this.props.data.map(d => d.value),
+                        backgroundColor: backgroundColor
+                    }
+                ],
+                labels: this.props.data.map(d => d.label)
+            },
+            options: donutsOptions
+        }
+
+        new Chart(myChartRef, config1);
     }
     render() {
         return (
             <div>
                 <canvas
-                    id="myChart"
                     ref={this.chartRef}
                 />
             </div>
