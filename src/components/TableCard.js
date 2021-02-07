@@ -5,18 +5,16 @@ import styles from '../css/TableCard.module.css';
 const renderTableDef = (label) => label.map((value) => <th key={value}>{value}</th>);
 
 const renderTableData = (inputData) => {
-
     return inputData.map((obj) => {
-
         const tableRow = Object.keys(obj).map(key => {
-            return <td key={[key]}>{obj[key]}</td>
+            return <td key={[key]}>{obj[key]}</td>;
         });
         return (
             <tr key={obj.appType}>
                 {tableRow}
             </tr>
         );
-    })
+    });
 };
 
 const TableCard = ({ data, label }) => {
@@ -33,7 +31,7 @@ const TableCard = ({ data, label }) => {
                 </tbody>
             </table>
         </div>
-    )
+    );
 };
 
 export default TableCard;

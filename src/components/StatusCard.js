@@ -9,11 +9,10 @@ const getStatusClass = (status) => {
         case 'idle': return 'minus yellow circle icon';
         default: return undefined;
     }
-}
+};
 
 const StatusCard = ({ name, status, statusData }) => {
-
-    const displayNo = statusData !== undefined ? true : false;
+    const displayNo = statusData !== undefined;
     return (
         <div className={`card ${styles.statusCardStyle}`} >
             <div className="content">

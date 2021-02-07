@@ -23,13 +23,13 @@ const section2Data = [
         header: 'Critical Incidents',
         data: '16/16',
         dataType: 'Active/Raised',
-        isCritical : true
+        isCritical: true
     },
     {
         header: 'High Incidents',
         data: '7/67s',
         dataType: 'Active/Raised',
-        isCritical : true
+        isCritical: true
     }
 ];
 

@@ -15,20 +15,18 @@ const donutsOptions = {
     rotation: 1 * Math.PI
 };
 
-
-
 class DonutChart extends Component {
     chartRef = React.createRef();
 
-    componentDidMount() {
-        const myChartRef = this.chartRef.current.getContext("2d");
+    componentDidMount () {
+        const myChartRef = this.chartRef.current.getContext('2d');
 
         const backgroundColor = [
-            this.props.isCritical ? 'red' :  '#FF6384',
-            '#36A2EB', // Blue
+            this.props.isCritical ? 'red' : '#FF6384',
+            '#36A2EB' // Blue
         ];
 
-        let config1 = {
+        const config = {
             type: 'doughnut',
             data: {
                 datasets: [
@@ -40,19 +38,20 @@ class DonutChart extends Component {
                 labels: this.props.data.map(d => d.label)
             },
             options: donutsOptions
-        }
-
-        new Chart(myChartRef, config1);
+        };
+        /* eslint-disable no-new */
+        new Chart(myChartRef, config);
     }
-    render() {
+
+    render () {
         return (
             <div>
                 <canvas
                     ref={this.chartRef}
                 />
             </div>
-        )
-    }
+        );
+    };
 }
 
 export default DonutChart;

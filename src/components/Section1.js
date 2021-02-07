@@ -11,8 +11,8 @@ const renderCards = (inputData) => {
             return <DonutCard key={index} name={obj.name} data={obj.data} obj={obj} />
         }
         return <Card key={index} header={obj.header} data={obj.data} dataType={obj.dataType} isCritical={obj.isCritical} isSection1={true} />
-    })
-}
+    });
+};
 
 const Section1 = () => {
     return (
@@ -21,8 +21,7 @@ const Section1 = () => {
                 {renderCards(section1Data)}
             </div>
         </div>
-    )
+    );
 };
 
 export default Section1;
-

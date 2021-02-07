@@ -2,7 +2,6 @@ import React from 'react';
 
 import styles from '../css/Card.module.css';
 
-
 const Card = (props) => {
     const styleName = props.isCritical ? styles.critical : '';
     const middleStyle = props.isSection1 ? styles.middle : '';
@@ -22,7 +21,7 @@ const Card = (props) => {
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 export default Card;

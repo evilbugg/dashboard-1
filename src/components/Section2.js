@@ -9,8 +9,8 @@ const renderCards = (inputData) => {
         return (
             <Card key={index} header={obj.header} data={obj.data} dataType={obj.dataType} isCritical={obj.isCritical} />
         );
-    })
-}
+    });
+};
 
 const Section2 = () => {
     return (
@@ -19,8 +19,7 @@ const Section2 = () => {
                 {renderCards(section2Data)}
             </div>
         </div>
-    )
+    );
 };
 
 export default Section2;
-
