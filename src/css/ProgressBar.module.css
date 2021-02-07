@@ -1,0 +1,23 @@
+.flexContainer {
+    display: flex;
+}
+
+.success {
+    background-color: #f1f1f1;
+    margin: 10px;
+    margin-right: 2px;
+    padding: 0.7em;
+    font-size: large;
+    width: 90%;
+    text-align: right;
+    line-height: 2em ;
+}
+
+.failure {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 0.7em;
+    font-size: large;
+    width: 10%;
+    line-height: 2em;
+}

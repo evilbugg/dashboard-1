@@ -4,10 +4,6 @@ import DonutCard from './DonutCard';
 
 import { Section1Data } from '../staticData/Section1Data'
 
-/**
- https://semantic-ui.com/views/card.html
- */
-
 const renderCards = () => {
     return Section1Data.map((obj, index) => {
         return (

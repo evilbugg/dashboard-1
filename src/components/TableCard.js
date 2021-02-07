@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from '../css/TableCard.module.css';
+
 const renderTableDef = (label) => label.map((value) => <th key={value}>{value}</th>);
 
 const renderTableData = (inputData) => {
@@ -7,7 +9,7 @@ const renderTableData = (inputData) => {
     return inputData.map((obj) => {
 
         const tableRow = Object.keys(obj).map(key => {
-            return <td>{obj[key]}</td>
+            return <td key={[key]}>{obj[key]}</td>
         });
         return (
             <tr key={obj.appType}>
@@ -17,23 +19,19 @@ const renderTableData = (inputData) => {
     })
 };
 
-const tableDivStyle = {
-    padding: "1em"
-}
-
 const TableCard = ({ data, label }) => {
     return (
-        <div style={tableDivStyle}>
-        <table className="ui striped table">
-            <thead>
-                <tr>
-                    {renderTableDef(label)}
-                </tr>
-            </thead>
-            <tbody>
-                {renderTableData(data)}
-            </tbody>
-        </table>
+        <div className={styles.tableDivStyle}>
+            <table className="ui striped table">
+                <thead>
+                    <tr>
+                        {renderTableDef(label)}
+                    </tr>
+                </thead>
+                <tbody>
+                    {renderTableData(data)}
+                </tbody>
+            </table>
         </div>
     )
 };

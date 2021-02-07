@@ -1,19 +1,17 @@
 import React from 'react';
 
-const criticalStyle = {
-    color: "red",
-    fontWeight: "bold"
-};
+import styles from '../css/Card.module.css';
+
 
 const Card = (props) => {
-    const styleName = props.isCritical ? criticalStyle : undefined;
+    const styleName = props.isCritical ? styles.critical : undefined;
     return (
         <div className="card">
             <div className="content">
                 <div className="header">
                     {props.header}
                 </div>
-                <div className="center aligned description" style={styleName}>
+                <div className={`center aligned description ${styleName}`}>
                     {props.data}
                 </div>
             </div>

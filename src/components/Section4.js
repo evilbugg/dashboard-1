@@ -5,6 +5,8 @@ import ProgressBar from './ProgressBar';
 import TableCard from './TableCard';
 import SubHeader from './SubHeader';
 
+import styles from '../css/Section4.module.css';
+
 const tranformObject = inpuData => {
 
     return inpuData.map((obj) => {
@@ -16,12 +18,6 @@ const tranformObject = inpuData => {
     });
 };
 
-const shadowBoxStyle = {
-    boxShadow: "0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5",
-    paddingBottom: "1em"
-};
-
-
 const workloadSubSection = "WorkLoads";
 const reCommandationsSubSection = "Recommandations";
 
@@ -31,11 +27,11 @@ const Section4 = () => {
 
     return (
         <div>
-            <div style={shadowBoxStyle}>
+            <div className={styles.shadowBoxStyle}>
                 <SubHeader value={reCommandationsSubSection} />
                 <ProgressBar progressName={Section4Recommandations[0]} failureName={Section4Recommandations[1]} />
             </div>
-            <div style={shadowBoxStyle}>
+            <div className={styles.shadowBoxStyle}>
                 <SubHeader value={headerValue} />
                 <TableCard data={tranformObject(Section4Data)} label={tableLabel} />
             </div>
