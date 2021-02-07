@@ -11,20 +11,21 @@ const statusCardStyle = {
 }
 
 const statusStyle = {
-    borderRadius: "60%",
+    borderRadius: "70%",
     display: "inline-block",
     backgroundColor: "red",
     marginLeft: "0.2em",
     paddingLeft: "0.2em",
-    paddingRight: "0.2em",
-    fontSize: "small"
+    paddingRight: "0.3em",
+    fontSize: "x-small",
+    color : "white"
 }
 
 const getStatusClass = (status) => {
     switch (status) {
         case 'success': return 'check green circle outline icon';
         case 'failure': return 'remove red circle icon';
-        case 'ideal': return 'minus yellow circle icon';
+        case 'idle': return 'minus yellow circle icon';
         default: return undefined;
     }
 }
@@ -42,7 +43,7 @@ const StatusCard = ({ name, status, statusData }) => {
                     displayNo
                     &&
                     <div style={statusStyle}>
-                        1
+                        {statusData}
                     </div>
                 }
             </div>

@@ -4,6 +4,7 @@ import React from 'react';
 import Section1 from './Section1';
 import Section2 from './Section2';
 import Section3 from './Section3';
+import Section4 from './Section4';
 
 /*
 https://stackoverflow.com/questions/29581359/semantic-ui-ui-grid-best-approach-for-layout-rows-columns-vs-segments
@@ -31,7 +32,7 @@ const App = () => {
                     <Section3 />
             </div>
                     <div className="eight wide column">
-                        4
+                    <Section4 />
             </div>
                 </div>
             </div>

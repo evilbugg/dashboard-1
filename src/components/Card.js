@@ -1,7 +1,8 @@
 import React from 'react';
 
 const criticalStyle = {
-    color: "red"
+    color: "red",
+    fontWeight: "bold"
 };
 
 const Card = (props) => {
