@@ -1,4 +1,4 @@
-const Section1Data = [
+const section1Data = [
     {
         name: 'CPU Usage',
         data: [
@@ -42,7 +42,13 @@ const Section1Data = [
                 value: 100 - 90.45
             }
         ]
+    },
+    {
+        header: 'Network I/O Bytes',
+        data: '691 MB /568 MB',
+        dataType: 'Read/Write',
+        displayType : 'per'
     }
 ];
 
-export { Section1Data };
+export { section1Data };

@@ -1,4 +1,4 @@
-const Section3Data = [
+const section3Data = [
     {
         name: 'Spark Hivethrift Server',
         status: 'failure',
@@ -181,4 +181,4 @@ const Section3Data = [
     },
 ];
 
-export { Section3Data };
+export { section3Data };

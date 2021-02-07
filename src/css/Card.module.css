@@ -2,3 +2,10 @@
     color: red !important;
     font-weight: bold !important;
 }
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6em;
+}

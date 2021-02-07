@@ -1,4 +1,4 @@
-const Section2Data = [
+const section2Data = [
     {
         header: 'Storage I/O Bytes',
         data: '3 MB/25 MB',
@@ -33,4 +33,4 @@ const Section2Data = [
     }
 ];
 
-export { Section2Data };
+export { section2Data };

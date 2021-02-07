@@ -1,4 +1,8 @@
 .shadowBoxStyle {
     box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+.recommandations {
     padding-bottom: 1em;
+    margin-bottom: 1.5em;
 }

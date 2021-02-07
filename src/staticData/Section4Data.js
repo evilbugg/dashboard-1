@@ -1,4 +1,4 @@
-const Section4Data = [
+const section4Data = [
     {
         appType: 'SPARK',
         total: 19,
@@ -20,7 +20,17 @@ const Section4Data = [
 
 ];
 
-const Section4Recommandations = ['SPARK', 'TEZ'];
+const recommandations = [
+    {
+        name: 'SPARK',
+        value: '90'
+    },
+    {
+        name: 'TEZ',
+        value: '10'
+    }
+];
+
 
 const tableLabel = [
     'APPLICATION TYPE',
@@ -29,4 +39,4 @@ const tableLabel = [
     'FAILED'
 ];
 
-export { Section4Data, tableLabel, Section4Recommandations};
+export { section4Data, tableLabel, recommandations };
