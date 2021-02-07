@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card from './Card';
 
-import { section2Data } from '../staticData/Section2Data'
+import { section2Data } from '../staticData/Section2Data';
 
 const renderCards = (inputData) => {
     return inputData.map((obj, index) => {

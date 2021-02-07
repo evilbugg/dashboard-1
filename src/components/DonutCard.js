@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DonutChart from './DonutChart'
+import DonutChart from './DonutChart';
 
 const DonutCard = ({ name, data }) => {
     const usageValue = (data.find((obj) => obj.label === 'usage')).value;
