@@ -20,6 +20,8 @@ const Section4Data = [
 
 ];
 
+const Section4Recommandations = ['SPARK', 'TEZ'];
+
 const tableLabel = [
     'APPLICATION TYPE',
     'TOTAL',
@@ -27,4 +29,4 @@ const tableLabel = [
     'FAILED'
 ];
 
-export { Section4Data, tableLabel};
+export { Section4Data, tableLabel, Section4Recommandations};

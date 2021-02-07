@@ -1,66 +1,45 @@
 import React from 'react';
 
-import { Section4Data, tableLabel } from '../staticData/Section4Data'
+import { Section4Data, tableLabel, Section4Recommandations } from '../staticData/Section4Data';
+import ProgressBar from './ProgressBar';
+import TableCard from './TableCard';
 
-const renderTableData = () => {
-    return Section4Data.map((obj) => {
-        return (
-            <tr>
-                <td>{obj.appType === undefined ? '-' : obj.appType}</td>
-                <td>{obj.total === undefined ? '-' : obj.total}</td>
-                <td>{obj.finsihed === undefined ? '-' : obj.finsihed}</td>
-                <td>{obj.failed === undefined ? '-' : obj.failed}</td>
-            </tr>
-        );
-    })
+const tranformObject = inpuData => {
+
+    return inpuData.map((obj) => {
+        let object = {};
+        for (const [key, value] of Object.entries(obj)) {
+            object[key] = value !== undefined ? value : '-';
+        }
+        return object;
+    });
 };
 
+const shadowBoxStyle = {
+    boxShadow: "0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5",
+    paddingBottom: "1em"
+};
 
-const renderTableDef = () => tableLabel.map((value) => <th>{value}</th>);
-
-const containerStyles = {
-    height: 20,
-    width: '100%',
-    backgroundColor: "#e0e0de",
-    borderRadius: 50,
-    margin: 50
+const headerStyle = {
+    paddingLeft: "1em",
+    paddingTop: "1em"
 }
 
-const fillerStyles = {
-    height: '100%',
-    width: `70%`,
-    backgroundColor: '#6a1b9a',
-    borderRadius: 'inherit',
-    textAlign: 'right'
-}
-
-const labelStyles = {
-    padding: 5,
-    color: 'white',
-    fontWeight: 'bold'
-}
+const workloadSubSection = "WorkLoads";
+const reCommandationsSubSection = "Recommandations";
 
 const Section4 = () => {
+
     return (
         <div>
-            <div style={containerStyles}>
-                <div style={fillerStyles}>
-                    <span style={labelStyles}>70%</span>
-                </div>
+            <div style={shadowBoxStyle}>
+                <h4 className="ui header" style={headerStyle}>{reCommandationsSubSection}</h4>
+                <ProgressBar progressName={Section4Recommandations[0]} failureName={Section4Recommandations[1]} />
             </div>
-
-
-            <progress value="90" max="100" />
-            <table className="ui striped table">
-                <thead>
-                    <tr>
-                        {renderTableDef()}
-                    </tr>
-                </thead>
-                <tbody>
-                    {renderTableData()}
-                </tbody>
-            </table>
+            <div style={shadowBoxStyle}>
+                <h4 className="ui header" style={headerStyle}>{workloadSubSection} ({Section4Data.length})</h4>
+                <TableCard data={tranformObject(Section4Data)} label={tableLabel} />
+            </div>
         </div>
     )
 };
