@@ -1,4 +1,4 @@
-const Section2Data = [
+const section2Data = [
     {
         header: 'Storage I/O Bytes',
         data: '3 MB/25 MB',
@@ -23,14 +23,14 @@ const Section2Data = [
         header: 'Critical Incidents',
         data: '16/16',
         dataType: 'Active/Raised',
-        isCritical : true
+        isCritical: true
     },
     {
         header: 'High Incidents',
         data: '7/67s',
         dataType: 'Active/Raised',
-        isCritical : true
+        isCritical: true
     }
 ];
 
-export { Section2Data };
+export { section2Data };

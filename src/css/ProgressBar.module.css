@@ -1,0 +1,26 @@
+.flexContainer {
+    display: flex;
+}
+
+.success {
+    background-color: #2c4df1;
+    margin: 10px;
+    margin-right: 2px;
+    padding: 0.7em;
+    font-size: large;
+    /* width: 90%; */
+    text-align: center;
+    line-height: 2em;
+    color : white;
+}
+
+.failure {
+    background-color: #719fca;
+    margin: 10px;
+    padding: 0.7em;
+    font-size: large;
+    /* width: 10%; */
+    line-height: 2em;
+    color : white;
+    text-align: center;
+}

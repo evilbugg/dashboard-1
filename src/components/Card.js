@@ -1,19 +1,17 @@
 import React from 'react';
 
-const criticalStyle = {
-    color: "red"
-};
+import styles from '../css/Card.module.css';
 
 const Card = (props) => {
-    const styleName = props.isCritical ? criticalStyle : undefined;
-    console.log(styleName);
+    const styleName = props.isCritical ? styles.critical : '';
+    const middleStyle = props.isSection1 ? styles.middle : '';
     return (
         <div className="card">
             <div className="content">
                 <div className="header">
                     {props.header}
                 </div>
-                <div className="center aligned description" style={styleName}>
+                <div className={`center aligned description ${styleName} ${middleStyle}`}>
                     {props.data}
                 </div>
             </div>
@@ -23,7 +21,7 @@ const Card = (props) => {
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 export default Card;

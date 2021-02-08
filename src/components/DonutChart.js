@@ -1,64 +1,57 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
 import Chart from 'chart.js';
 
-const config = {
-    type: 'doughnut',
-    data: {
-        datasets: [{
-            data: [
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            backgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-            ],
-            hoverBackgroundColor: [
-                "#FF6384",
-                "#36A2EB",
-                "#FFCE56"
-            ],
-            label: 'Dataset 1'
-        }],
-        labels: [
-            "Red",
-            "Orange",
-            "Yellow",
-            "Green",
-            "Blue"
-        ]
+/*
+https://www.createwithdata.com/react-chartjs-dashboard/
+*/
+
+const donutsOptions = {
+    aspectRatio: 3.5,
+    legend: {
+        display: false
     },
-    options: {
-        legend: {
-            display: false
-        },
-        circumference: 1 * Math.PI,
-        rotation: 1 * Math.PI
-    }
+    circumference: 1 * Math.PI,
+    rotation: 1 * Math.PI
 };
 
 class DonutChart extends Component {
     chartRef = React.createRef();
 
-    componentDidMount() {
-        const myChartRef = this.chartRef.current.getContext("2d");
+    componentDidMount () {
+        const myChartRef = this.chartRef.current.getContext('2d');
 
+        const backgroundColor = [
+            this.props.isCritical ? 'red' : '#FF6384',
+            '#36A2EB' // Blue
+        ];
+
+        const config = {
+            type: 'doughnut',
+            data: {
+                datasets: [
+                    {
+                        data: this.props.data.map(d => d.value),
+                        backgroundColor: backgroundColor
+                    }
+                ],
+                labels: this.props.data.map(d => d.label)
+            },
+            options: donutsOptions
+        };
+        /* eslint-disable no-new */
         new Chart(myChartRef, config);
     }
-    render() {
+
+    render () {
         return (
             <div>
                 <canvas
-                    id="myChart"
                     ref={this.chartRef}
                 />
             </div>
-        )
-    }
+        );
+    };
 }
 
 export default DonutChart;
